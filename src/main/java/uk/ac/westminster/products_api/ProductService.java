@@ -20,6 +20,14 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return products;
     }
+    public List<String> getAllSummaries() {
+        List<String> summaries = new ArrayList<>();
+        for (Product p : products) {
+            // One line. No instanceof, no casts, no type names.
+            summaries.add(p.getSummary());
+        }
+        return summaries;
+    }
     public Product addProduct(Product product) {
         product.setId(nextId++); // use the value, then add one
         products.add(product);
